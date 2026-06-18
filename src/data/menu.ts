@@ -3,7 +3,7 @@ export type MenuItem = {
   label: string;
   path?: string;
   children?: MenuItem[];
-  area: "ext" | "int" | "ai" | "erp";
+  area: "ext" | "int" | "ai" | "erp" | "kac";
   icon?: string;
 };
 
@@ -354,11 +354,67 @@ export const erpMenu: MenuItem[] = [
   },
 ];
 
+export const kacMenu: MenuItem[] = [
+  {
+    id: "kac-1", label: "임대계약관리", area: "kac", icon: "📄", children: [
+      { id: "SCR-KAC-001", label: "가계약마스터 생성", path: "/kac/scr-kac-001", area: "kac" },
+      { id: "SCR-KAC-002", label: "가계약마스터 조회/변경", path: "/kac/scr-kac-002", area: "kac" },
+      { id: "SCR-KAC-003", label: "가계약 리스트 조회", path: "/kac/scr-kac-003", area: "kac" },
+      { id: "SCR-KAC-004", label: "계약마스터 생성 (본계약)", path: "/kac/scr-kac-004", area: "kac" },
+      { id: "SCR-KAC-005", label: "계약마스터 조회/변경", path: "/kac/scr-kac-005", area: "kac" },
+      { id: "SCR-KAC-006", label: "단기임대 리스트 조회", path: "/kac/scr-kac-006", area: "kac" },
+      { id: "SCR-KAC-007", label: "무단점용 예상 리스트 조회", path: "/kac/scr-kac-007", area: "kac" },
+    ],
+  },
+  {
+    id: "kac-2", label: "계약처리", area: "kac", icon: "✍️", children: [
+      { id: "SCR-KAC-008", label: "계약만료 처리", path: "/kac/scr-kac-008", area: "kac" },
+      { id: "SCR-KAC-009", label: "계약중도해지 처리 (전세)", path: "/kac/scr-kac-009", area: "kac" },
+      { id: "SCR-KAC-010", label: "계약중도해지 처리 (일부임대물건)", path: "/kac/scr-kac-010", area: "kac" },
+      { id: "SCR-KAC-011", label: "계약변경 처리", path: "/kac/scr-kac-011", area: "kac" },
+      { id: "SCR-KAC-012", label: "계약변경 처리 (일부물건)", path: "/kac/scr-kac-012", area: "kac" },
+      { id: "SCR-KAC-013", label: "계약건별 차기년도 연이관", path: "/kac/scr-kac-013", area: "kac" },
+    ],
+  },
+  {
+    id: "kac-3", label: "임대료/추가임대료", area: "kac", icon: "💰", children: [
+      { id: "SCR-KAC-014", label: "구내영업료 산정 및 전송", path: "/kac/scr-kac-014", area: "kac" },
+      { id: "SCR-KAC-015", label: "매출액기준 추가임대료 산정 및 전송", path: "/kac/scr-kac-015", area: "kac" },
+      { id: "SCR-KAC-016", label: "매출액영업요율기준 추가임대료 산정", path: "/kac/scr-kac-016", area: "kac" },
+      { id: "SCR-KAC-017", label: "수시고지 유형선택 산정 및 전송", path: "/kac/scr-kac-017", area: "kac" },
+      { id: "SCR-KAC-018", label: "계약만료/중도해지시 매출액기준 추가임대료 산정", path: "/kac/scr-kac-018", area: "kac" },
+    ],
+  },
+  {
+    id: "kac-4", label: "임대현황 조회", area: "kac", icon: "📊", children: [
+      { id: "SCR-KAC-019", label: "공항별/업종별 계약현황 조회", path: "/kac/scr-kac-019", area: "kac" },
+      { id: "SCR-KAC-020", label: "고객유형별 임대현황", path: "/kac/scr-kac-020", area: "kac" },
+      { id: "SCR-KAC-021", label: "살고지기준 임대료 현황 (달력조회)", path: "/kac/scr-kac-021", area: "kac" },
+      { id: "SCR-KAC-022", label: "구내영업료 종괄표", path: "/kac/scr-kac-022", area: "kac" },
+      { id: "SCR-KAC-023", label: "담보현황 종괄표", path: "/kac/scr-kac-023", area: "kac" },
+    ],
+  },
+  {
+    id: "kac-5", label: "고객관리", area: "kac", icon: "👥", children: [
+      { id: "SCR-KAC-024", label: "고객마스터 조회", path: "/kac/scr-kac-024", area: "kac" },
+      { id: "SCR-KAC-025", label: "고객분류체계 관리", path: "/kac/scr-kac-025", area: "kac" },
+      { id: "SCR-KAC-026", label: "부정당업자 관리대장", path: "/kac/scr-kac-026", area: "kac" },
+    ],
+  },
+  {
+    id: "kac-6", label: "임대보증금 관리", area: "kac", icon: "🏦", children: [
+      { id: "SCR-KAC-027", label: "임대보증금 신규/추가", path: "/kac/scr-kac-027", area: "kac" },
+      { id: "SCR-KAC-028", label: "임대보증금 대체처리", path: "/kac/scr-kac-028", area: "kac" },
+    ],
+  },
+];
+
 export const allMenus = {
   ext: extMenu,
   int: intMenu,
   ai: aiMenu,
   erp: erpMenu,
+  kac: kacMenu,
 };
 
 export type AreaType = keyof typeof allMenus;
@@ -368,6 +424,7 @@ export const areaLabels: Record<AreaType, string> = {
   int: "내부망",
   ai: "AI",
   erp: "ERP",
+  kac: "ERP ASIS 업무",
 };
 
 // Helper: get all leaf items for an area
