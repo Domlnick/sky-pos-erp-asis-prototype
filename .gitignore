@@ -43,3 +43,6 @@ docs-local/
 
 # claude code tooling
 .serena/
+
+# playwright test results
+test-results/
