@@ -42,6 +42,11 @@ const DEPOSIT_ROWS = [
 
 export default function ScrKac001() {
   const [showDeposit, setShowDeposit] = useState(false);
+  const [showCustomerPopup, setShowCustomerPopup] = useState(false);
+  const [popupYongdo, setPopupYongdo] = useState<"업무시설" | "상업시설">("업무시설");
+  const [memoRows, setMemoRows] = useState([1, 2, 3]);
+  const [detailRows, setDetailRows] = useState([1, 2, 3, 4]);
+  const [docRows, setDocRows] = useState([1, 2]);
 
   const [depositForm, setDepositForm] = useState({
     companyCode: "KAC1",
@@ -56,7 +61,7 @@ export default function ScrKac001() {
   };
 
   return (
-    <div className="space-y-3">
+    <><div className="space-y-3">
       {/* Title */}
       <div className="border-b border-[#e7eef5] pb-3">
         <div className="text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8]">임대계약관리</div>
@@ -119,7 +124,7 @@ export default function ScrKac001() {
                     <td className="py-2 pr-4">
                       <div className="flex items-center gap-1">
                         <Input className="h-6 w-20 border-[#d6e0ea] text-[12px]" />
-                        <button className="rounded border border-[#d6e0ea] bg-white px-1 py-0.5 text-[11px] text-[#475569] hover:bg-[#f8fbff]">□</button>
+                        <button onClick={() => setShowCustomerPopup(true)} className="rounded border border-[#d6e0ea] bg-white px-1 py-0.5 text-[11px] text-[#475569] hover:bg-[#f8fbff]">🔍</button>
                         <Input className="h-6 w-28 border-[#d6e0ea] text-[12px]" />
                       </div>
                     </td>
@@ -208,27 +213,29 @@ export default function ScrKac001() {
             </div>
             <div className="px-4 py-3">
               <div className="flex gap-1.5 mb-2">
-                <button className={btnBase}>🔲 행추가</button>
-                <button className={btnBase}>🔲 행삭제</button>
+                <button className={btnBase} onClick={() => setMemoRows(r => [...r, r.length + 1])}>🔲 행추가</button>
+                <button className={btnBase} onClick={() => setMemoRows(r => r.length > 1 ? r.slice(0, -1) : r)}>🔲 행삭제</button>
               </div>
-              <table className="w-full border-collapse text-[12px]">
-                <thead>
-                  <tr className="border-b border-[#e7eef5] bg-[#f8fbff]">
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-6">행</th>
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-10">순번</th>
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">메모장</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[1, 2, 3].map((i) => (
-                    <tr key={i} className="border-b border-[#f1f5f9] h-8">
-                      <td className="px-2 py-1"></td>
-                      <td className="px-2 py-1"></td>
-                      <td className="px-2 py-1"></td>
+              <div className="max-h-[128px] overflow-y-auto">
+                <table className="w-full border-collapse text-[12px]">
+                  <thead className="sticky top-0 z-10">
+                    <tr className="border-b border-[#e7eef5] bg-[#f8fbff]">
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-6">행</th>
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-10">순번</th>
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">메모장</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {memoRows.map((i) => (
+                      <tr key={i} className="border-b border-[#f1f5f9] h-8">
+                        <td className="px-2 py-1"></td>
+                        <td className="px-2 py-1"></td>
+                        <td className="px-2 py-1"></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -240,12 +247,12 @@ export default function ScrKac001() {
           </div>
           <div className="px-4 py-3">
             <div className="flex gap-1.5 mb-2">
-              <button className={btnBase}>🔲 행추가</button>
-              <button className={btnBase}>🔲 행삭제</button>
+              <button className={btnBase} onClick={() => setDetailRows(r => [...r, r.length + 1])}>🔲 행추가</button>
+              <button className={btnBase} onClick={() => setDetailRows(r => r.length > 1 ? r.slice(0, -1) : r)}>🔲 행삭제</button>
             </div>
-            <div className="overflow-x-auto">
+            <div className="max-h-[128px] overflow-auto">
               <table className="w-full border-collapse text-[12px]">
-                <thead>
+                <thead className="sticky top-0 z-10">
                   <tr className="border-b border-[#e7eef5] bg-[#f8fbff]">
                     {["순번", "자산번호", "자산내역", "자산구분", "무상여부", "임대료산정", "사용목적", "면적", "단가", "신청시작일", "신청종료일"].map((h) => (
                       <th key={h} className="px-2 py-2 text-left text-[11px] font-semibold text-[#64748b] whitespace-nowrap">{h}</th>
@@ -253,7 +260,7 @@ export default function ScrKac001() {
                   </tr>
                 </thead>
                 <tbody>
-                  {[1, 2, 3, 4].map((i) => (
+                  {detailRows.map((i) => (
                     <tr key={i} className="border-b border-[#f1f5f9] h-8">
                       {Array(11).fill(null).map((_, j) => (
                         <td key={j} className="px-2 py-1 text-[12px] text-[#334155]"></td>
@@ -320,29 +327,31 @@ export default function ScrKac001() {
             </div>
             <div className="px-4 py-3">
               <div className="flex gap-1.5 mb-2">
-                <button className={btnBase}>🔲 신규</button>
-                <button className={btnBase}>🗑️ 파일삭제</button>
+                <button className={btnBase} onClick={() => setDocRows(r => [...r, r.length + 1])}>🔲 신규</button>
+                <button className={btnBase} onClick={() => setDocRows(r => r.length > 1 ? r.slice(0, -1) : r)}>🗑️ 파일삭제</button>
                 <button className={btnBase}>⬇️ 다운로드</button>
               </div>
-              <table className="w-full border-collapse text-[12px]">
-                <thead>
-                  <tr className="border-b border-[#e7eef5] bg-[#f8fbff]">
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-6">행</th>
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-10">순번</th>
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">도면선택</th>
-                    <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">파일명</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[1, 2].map((i) => (
-                    <tr key={i} className="border-b border-[#f1f5f9] h-8">
-                      <td className="px-2 py-1"></td>
-                      <td className="px-2 py-1"></td>
-                      <td className="px-2 py-1"></td>
+              <div className="max-h-[128px] overflow-y-auto">
+                <table className="w-full border-collapse text-[12px]">
+                  <thead className="sticky top-0 z-10">
+                    <tr className="border-b border-[#e7eef5] bg-[#f8fbff]">
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-6">행</th>
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b] w-10">순번</th>
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">도면선택</th>
+                      <th className="px-2 py-1.5 text-left text-[11px] font-semibold text-[#64748b]">파일명</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {docRows.map((i) => (
+                      <tr key={i} className="border-b border-[#f1f5f9] h-8">
+                        <td className="px-2 py-1"></td>
+                        <td className="px-2 py-1"></td>
+                        <td className="px-2 py-1"></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -540,5 +549,102 @@ export default function ScrKac001() {
         </div>
       </div>
     </div>
+
+      {/* 고객코드 검색 팝업 */}
+      {showCustomerPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="w-[400px] rounded-xl border border-[#c8d8e8] bg-white shadow-2xl">
+            {/* 팝업 헤더 */}
+            <div className="flex items-center justify-between rounded-t-xl border-b border-[#d7e2ee] bg-[#dbe8f4] px-4 py-2.5">
+              <span className="text-[13px] font-bold text-[#1e3a5f]">[RT] 가계약마스터 생성</span>
+              <button
+                onClick={() => setShowCustomerPopup(false)}
+                className="flex h-6 w-6 items-center justify-center rounded text-[#64748b] hover:bg-[#c8d8e8] hover:text-[#1e3a5f]"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* 팝업 바디 */}
+            <div className="space-y-3 px-5 py-4">
+              {/* 입력조건 */}
+              <div className="rounded border border-[#c8d8e8]">
+                <div className="border-b border-[#c8d8e8] bg-[#eef3f9] px-3 py-1.5">
+                  <span className="text-[12px] font-semibold text-[#1e3a5f]">입력조건</span>
+                </div>
+                <div className="px-4 py-3">
+                  <table className="w-full border-collapse text-[12px]">
+                    <tbody>
+                      <tr>
+                        <td className="py-1.5 pr-3 font-semibold text-[#64748b] whitespace-nowrap w-20">회사코드</td>
+                        <td className="py-1.5">
+                          <div className="flex items-center gap-2">
+                            <Input value="KAC1" readOnly className="h-6 w-16 border-[#d6e0ea] text-[12px] bg-[#f8fbff]" />
+                            <span className="text-[12px] text-[#334155]">한국공항공사</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 pr-3 font-semibold text-[#64748b] whitespace-nowrap">년도</td>
+                        <td className="py-1.5">
+                          <Input value="2026" readOnly className="h-6 w-16 border-[#d6e0ea] text-[12px] bg-[#f8fbff]" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-1.5 pr-3 font-semibold text-[#64748b] whitespace-nowrap">사업영역</td>
+                        <td className="py-1.5">
+                          <Input value="BA15" readOnly className="h-6 w-16 border-[#d6e0ea] text-[12px] bg-[#f8fbff]" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* 용도구분 */}
+              <div className="rounded border border-[#c8d8e8]">
+                <div className="border-b border-[#c8d8e8] bg-[#eef3f9] px-3 py-1.5">
+                  <span className="text-[12px] font-semibold text-[#1e3a5f]">용도구분</span>
+                </div>
+                <div className="space-y-1.5 px-4 py-3">
+                  <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155]">
+                    <input
+                      type="radio"
+                      name="popup-yongdo"
+                      value="업무시설"
+                      checked={popupYongdo === "업무시설"}
+                      onChange={() => setPopupYongdo("업무시설")}
+                      className="accent-[#1e3a5f]"
+                    />
+                    업무시설
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer text-[12px] text-[#334155]">
+                    <input
+                      type="radio"
+                      name="popup-yongdo"
+                      value="상업시설"
+                      checked={popupYongdo === "상업시설"}
+                      onChange={() => setPopupYongdo("상업시설")}
+                      className="accent-[#1e3a5f]"
+                    />
+                    상업시설
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* 팝업 푸터 */}
+            <div className="flex justify-center rounded-b-xl border-t border-[#d7e2ee] px-4 py-3">
+              <button
+                onClick={() => setShowCustomerPopup(false)}
+                className="rounded border border-[#b8c9db] bg-[#f0f5fa] px-6 py-1.5 text-[12px] font-semibold text-[#1e3a5f] hover:bg-[#e2eaf4]"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
