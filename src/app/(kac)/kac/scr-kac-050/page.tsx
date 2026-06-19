@@ -1,7 +1,6 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 const btnBase =
   "inline-flex items-center gap-1.5 rounded border border-[#b8c9db] bg-[#f0f5fa] px-3 py-1.5 text-[12px] font-semibold text-[#1e3a5f] hover:bg-[#e2eaf4]";
