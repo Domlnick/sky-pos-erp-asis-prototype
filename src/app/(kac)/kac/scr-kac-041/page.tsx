@@ -8,7 +8,7 @@ export default function ScrKac041() {
     { label: "고객" },
     { label: "전대 구분" },
     { label: "입찰 구분" },
-    { label: "임대룡도" },
+    { label: "임대용도" },
     { label: "유무상구분" },
     { label: "자산구분" },
   ];
@@ -67,10 +67,7 @@ export default function ScrKac041() {
             ))}
           </tbody>
         </table>
-        <Button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d] h-auto">조회</Button>
       </div>
-
-      <p className="text-[12px] text-[#94a3b8] px-1">해당데이터가 없습니다</p>
     </div>
   );
 }
