@@ -40,12 +40,7 @@ export default function ScrKac024() {
       {/* Breadcrumb + Title */}
       <div className="border-b border-[#e7eef5] pb-3">
         <div className="text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8]">고객관리</div>
-        <h1 className="mt-0.5 text-[18px] font-bold text-[#0f172a]">고객마스터 조회 SD02</h1>
-      </div>
-
-      {/* Result Count */}
-      <div className="text-[13px] text-[#334155]">
-        ☑ 983 건 조회되었습니다.
+        <h1 className="mt-0.5 text-[18px] font-bold text-[#0f172a]">고객마스터 조회 2026.05.14 SD02</h1>
       </div>
 
       {/* Data Table Card */}
@@ -93,6 +88,12 @@ export default function ScrKac024() {
           </table>
         </div>
       </div>
+      
+      {/* Result Count */}
+      <div className="text-[13px] text-[#334155]">
+        ☑ 983 건 조회되었습니다.
+      </div>
+
     </div>
   );
 }
