@@ -51,8 +51,6 @@ export default function ScrKac022() {
           </table>
         </div>
       </div>
-
-      <p className="text-[12px] text-[#94a3b8] px-1">해당데이터가 없습니다</p>
     </div>
   );
 }

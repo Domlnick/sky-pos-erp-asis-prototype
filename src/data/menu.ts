@@ -400,7 +400,7 @@ export const kacMenu: MenuItem[] = [
     id: "kac-4", label: "임대현황 조회", area: "kac", icon: "📊", children: [
       { id: "SCR-KAC-019", label: "공항별/업종별 계약현황 조회", path: "/kac/scr-kac-019", area: "kac" },
       { id: "SCR-KAC-020", label: "고객유형별 임대현황", path: "/kac/scr-kac-020", area: "kac" },
-      { id: "SCR-KAC-021", label: "살고지기준 임대료 현황 (달력조회)", path: "/kac/scr-kac-021", area: "kac" },
+      { id: "SCR-KAC-021", label: "실고지기준 임대료 현황 (달력조회)", path: "/kac/scr-kac-021", area: "kac" },
       { id: "SCR-KAC-022", label: "구내영업료 종괄표", path: "/kac/scr-kac-022", area: "kac" },
       { id: "SCR-KAC-023", label: "담보현황 종괄표", path: "/kac/scr-kac-023", area: "kac" },
       { id: "SCR-KAC-042", label: "임대현황 기준일자 조회", path: "/kac/scr-kac-042", area: "kac" },

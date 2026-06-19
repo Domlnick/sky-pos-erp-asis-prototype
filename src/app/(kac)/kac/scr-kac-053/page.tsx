@@ -1,7 +1,6 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export default function ScrKac053() {
   return (
@@ -32,7 +31,6 @@ export default function ScrKac053() {
               <td className="py-1.5 pr-4 text-[12px] font-semibold text-[#64748b]">정기/수시 여부</td>
               <td className="py-1.5 flex items-center gap-2">
                 <Input className="h-7 w-12 border-[#d6e0ea] text-[12px]" />
-                <button className="border border-[#d6e0ea] bg-white px-1.5 py-1 text-[11px] text-[#475569] rounded">▲</button>
               </td>
             </tr>
             <tr className="border-b border-[#f1f5f9]">
@@ -61,10 +59,7 @@ export default function ScrKac053() {
             </tr>
           </tbody>
         </table>
-        <Button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d] h-auto">조회</Button>
       </div>
-
-      <p className="text-[12px] text-[#94a3b8] px-1">조건에 맞는 데이터가 없습니다.</p>
     </div>
   );
 }

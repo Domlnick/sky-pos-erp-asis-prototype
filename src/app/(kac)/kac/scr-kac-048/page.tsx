@@ -1,27 +1,58 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function ScrKac048() {
-  const [searched, setSearched] = useState(false);
+  const [showList, setShowList] = useState(false);
 
   const rows = [
-    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
-    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
-    { bizArea: "BA15", custCode: "5080", contractNo: "15", contractType: "한계약", custType: "국가기관", custCode2: "S00330", custName: "국립수산물", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5000", contractNo: "18", contractType: "한계약", custType: "국가기관", custCode2: "S00210", custName: "김포공항물류(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5042", contractNo: "13", contractType: "한계약", custType: "국가기관", custCode2: "S00251", custName: "서울전파관리소(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5080", contractNo: "15", contractType: "한계약", custType: "국가기관", custCode2: "S00330", custName: "국립검역원(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
+    { bizArea: "BA15", custCode: "5080", contractNo: "15", contractType: "한계약", custType: "국가기관", custCode2: "S00330", custName: "국립검역원(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "12874", result: "운한은" },
+    { bizArea: "BA15", custCode: "5100", contractNo: "14", contractType: "한계약", custType: "국가기관", custCode2: "S00330", custName: "국립검역원(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
+    { bizArea: "BA15", custCode: "5125", contractNo: "16", contractType: "1차년도", custType: "국가기관", custCode2: "S00089", custName: "서울전파관리소", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
+    { bizArea: "BA15", custCode: "5210", contractNo: "12", contractType: "한계약", custType: "국가기관", custCode2: "S00630", custName: "서울특별시(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
+    { bizArea: "BA15", custCode: "", contractNo: "", contractType: "한계약", custType: "국가기관", custCode2: "S01100", custName: "서울특별시(공항)", rentType: "업무시설·사용", state: "수의", startDate: "2026.01.01", endDate: "2027.12.31", days: "730", lastDate: "13081", result: "이정" },
   ];
 
   return (
     <div className="space-y-3">
       <h2 className="text-[14px] font-bold text-[#1e3a5f]">임대계약총괄표(계약순번-임대물건기준)</h2>
 
-      {!searched ? (
+      <button
+        onClick={() => setShowList((v) => !v)}
+        className={`text-[12px] px-3 py-1.5 rounded border transition-colors ${
+          showList
+            ? "bg-[#1e3a5f] text-white border-[#1e3a5f]"
+            : "bg-white text-[#1e3a5f] border-[#c8d8e8] hover:bg-[#eef3f9]"
+        }`}
+      >
+        조회 실행
+      </button>
+
+      {!showList ? (
         <div className="rounded border border-[#c8d8e8] bg-white p-4 space-y-3">
-          <div className="flex gap-2 mb-2">
-            <Button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d] h-auto">실행 (F8)</Button>
-          </div>
           <table className="text-[12px] border-collapse w-full max-w-xl">
             <tbody>
               <tr className="border-b border-[#f1f5f9]">
@@ -104,15 +135,13 @@ export default function ScrKac048() {
               <label htmlFor="extra-check" className="text-[12px]">임대료 구분이 무단, 기타, 변동, 구내, 임시사용인경우 리스트에 추가</label>
             </div>
           </div>
-          <Button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d] h-auto" onClick={() => setSearched(true)}>조회</Button>
         </div>
       ) : (
-        <div className="space-y-2">
-          <Button variant="outline" className="text-[12px] px-3 py-1.5 h-auto" onClick={() => setSearched(false)}>← 조회조건</Button>
-          <div className="rounded border border-[#c8d8e8] bg-white overflow-hidden">
-            <div className="overflow-x-auto">
+        <div className="rounded border border-[#c8d8e8] bg-white overflow-hidden">
+          <div className="overflow-x-auto">
+            <div style={{ height: "640px", overflowY: "auto" }}>
               <table className="w-full text-[12px]">
-                <thead>
+                <thead className="sticky top-0 z-10">
                   <tr>
                     {["사업영역", "계약번호", "계약차수", "년도구분", "업종", "고객코드", "고객명", "업무구분·사용, 임달구분", "임대개시일", "임대종료일", "계약일수", "납도해지일", "대여시일", "최초대여", "균도해지일", "임대사항이", "결과연장", "전자계약대"].map((h) => (
                       <th key={h} className="bg-[#eef3f9] text-[#1e3a5f] font-semibold text-[12px] border border-[#c8d8e8] px-2 py-1.5 whitespace-nowrap">{h}</th>

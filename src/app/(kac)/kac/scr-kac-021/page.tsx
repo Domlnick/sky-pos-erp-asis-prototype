@@ -7,14 +7,14 @@ export default function ScrKac021() {
     <div className="space-y-4">
       <div className="border-b border-[#e7eef5] pb-3">
         <div className="text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8]">임대현황 조회</div>
-        <h1 className="mt-0.5 text-[18px] font-bold text-[#0f172a]">[RT] 살고지기준 임대료 현황</h1>
+        <h1 className="mt-0.5 text-[18px] font-bold text-[#0f172a]">[RT] 실고지기준 임대료 현황</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* 조회조건-살고지 */}
+      <div className="space-y-4">
+        {/* 조회조건-실고지 */}
         <div className="rounded-[18px] border border-[#d7e2ee] bg-white shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
           <div className="border-b border-[#e7eef5] px-5 py-3">
-            <div className="text-sm font-semibold text-[#0f172a]">조회조건-살고지</div>
+            <div className="text-sm font-semibold text-[#0f172a]">조회조건-실고지</div>
           </div>
           <div className="px-5 py-4">
             <table className="text-sm border-collapse w-full">

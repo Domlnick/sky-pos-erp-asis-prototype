@@ -49,7 +49,7 @@ export default function ScrKac019() {
                   <Input defaultValue="1" className="h-7 w-10 border-[#d6e0ea] text-sm" />
                 </td>
               </tr>
-              {["전대 구분","입찰 구분","임대등도","유무상구분","자산구분"].map((label) => (
+              {["전대 구분","입찰 구분","임대용도","유무상구분","자산구분"].map((label) => (
                 <tr key={label} className="border-b border-[#f1f5f9]">
                   <td className="py-2 pr-4 text-[12px] font-semibold text-[#64748b]">{label}</td>
                   <td className="py-2 flex items-center gap-2">
@@ -64,8 +64,6 @@ export default function ScrKac019() {
           </table>
         </div>
       </div>
-
-      <p className="text-[12px] text-[#94a3b8] px-1">해당데이터가 없습니다</p>
     </div>
   );
 }

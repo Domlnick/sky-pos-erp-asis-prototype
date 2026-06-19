@@ -18,7 +18,7 @@ export default function ScrKac052() {
       <h2 className="text-[14px] font-bold text-[#1e3a5f]">FI 임대수익(국내/국제) 조회</h2>
 
       <div className="flex gap-2 mb-2">
-        <button className="border border-[#c8d8e8] bg-white text-[12px] px-3 py-1.5 rounded hover:bg-[#f0f4f8] text-[#475569]">배포</button>
+        <button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d]">배포</button>
       </div>
 
       <div className="rounded border border-[#c8d8e8] bg-white p-3 space-y-1 text-[12px] text-[#475569]">
