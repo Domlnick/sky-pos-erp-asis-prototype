@@ -50,7 +50,7 @@ export default function ScrKac017() {
                 </td>
               </tr>
               <tr className="border-b border-[#f1f5f9]">
-                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">환급요청사번</td>
+                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">결재요청사번</td>
                 <td className="py-2.5 flex items-center gap-1">
                   <Input className="h-7 w-28 border-[#d6e0ea] text-sm" />
                   <button className="rounded border border-[#d6e0ea] bg-white px-1.5 py-1 text-[11px] text-[#475569] hover:bg-[#f8fbff]">□</button>

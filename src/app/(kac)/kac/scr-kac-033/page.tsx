@@ -1,7 +1,6 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export default function ScrKac033() {
   return (
@@ -38,7 +37,7 @@ export default function ScrKac033() {
               </td>
             </tr>
             <tr className="border-b border-[#f1f5f9]">
-              <td className="py-1.5 pr-4 text-[12px] font-semibold text-[#64748b]">환급요청발자</td>
+              <td className="py-1.5 pr-4 text-[12px] font-semibold text-[#64748b]">환급요청일자</td>
               <td className="py-1.5">
                 <Input className="h-7 w-36 border-[#d6e0ea] text-[12px]" />
               </td>
@@ -50,18 +49,13 @@ export default function ScrKac033() {
               </td>
             </tr>
             <tr>
-              <td className="py-1.5 pr-4 text-[12px] font-semibold text-[#64748b]">균재요청사번</td>
+              <td className="py-1.5 pr-4 text-[12px] font-semibold text-[#64748b]">결재요청사번</td>
               <td className="py-1.5">
                 <Input defaultValue="I" className="h-7 w-20 border-[#d6e0ea] text-[12px]" />
               </td>
             </tr>
           </tbody>
         </table>
-        <div className="pt-2">
-          <Button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d] h-auto">
-            조회
-          </Button>
-        </div>
       </div>
     </div>
   );

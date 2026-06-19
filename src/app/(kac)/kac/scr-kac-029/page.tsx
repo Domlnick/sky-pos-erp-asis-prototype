@@ -1,7 +1,13 @@
 export default function ScrKac029() {
   return (
     <div className="space-y-3">
-      <h2 className="text-[14px] font-bold text-[#1e3a5f]">신청기간만료 90일 조회</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-[14px] font-bold text-[#1e3a5f]">신청기간만료 90일 조회</h2>
+        <div className="flex gap-2">
+          <button className="bg-[#1e3a5f] text-white text-[12px] px-3 py-1.5 rounded hover:bg-[#162e4d]">💾 저장</button>
+          <button className="border border-[#c8d8e8] bg-white text-[12px] px-3 py-1.5 rounded hover:bg-[#f0f4f8] text-[#475569]">✕</button>
+        </div>
+      </div>
 
       <div className="rounded border border-[#c8d8e8] bg-white p-3">
         <p className="text-[12px] text-[#475569] pb-2">
@@ -11,7 +17,7 @@ export default function ScrKac029() {
           <table className="w-full text-[12px]">
             <thead>
               <tr>
-                {["계약무분", "고객코드", "고객명", "신청기간만료일", "계약이/부운변"].map((h) => (
+                {["계약무분", "고객코드", "고객명", "신청기간만료일", "계약/일련번호"].map((h) => (
                   <th key={h} className="bg-[#eef3f9] text-[#1e3a5f] font-semibold text-[12px] border border-[#c8d8e8] px-2 py-1.5 whitespace-nowrap">{h}</th>
                 ))}
               </tr>

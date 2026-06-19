@@ -43,7 +43,7 @@ export default function ScrKac014() {
                 </td>
               </tr>
               <tr>
-                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">환급요청사번</td>
+                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">결재요청사번</td>
                 <td className="py-2.5 flex items-center gap-1">
                   <Input className="h-7 w-28 border-[#d6e0ea] text-sm" />
                   <button className="rounded border border-[#d6e0ea] bg-white px-1.5 py-1 text-[11px] text-[#475569] hover:bg-[#f8fbff]">□</button>
@@ -56,7 +56,7 @@ export default function ScrKac014() {
 
       <div className="space-y-1 px-1">
         <p className="text-[13px] text-[#334155]">■ 구내영업료 산출년도와 고지요청일자는 같은년도로 입력 ■</p>
-        <p className="text-[13px] text-[#334155]">■ 구내영업료 본고지 대상은 임대관리 &gt; 임대료산정 &gt;</p>
+        <p className="text-[13px] text-[#334155]">■ 구내영업료 별도고지 대상은 임대관리 &gt; 임대료산정 &gt;</p>
         <p className="text-[13px] text-[#334155] pl-4">수시고지 임대료 산정 및 전송 메뉴에서 기타 사유에 의한 추가/환급 대상으로 진행</p>
       </div>
     </div>

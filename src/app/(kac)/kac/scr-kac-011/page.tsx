@@ -59,7 +59,7 @@ export default function ScrKac011() {
                 </td>
               </tr>
               <tr className="border-b border-[#f1f5f9]">
-                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">환급요청사번</td>
+                <td className="py-2.5 pr-4 text-[12px] font-semibold text-[#64748b]">결재요청사번</td>
                 <td className="py-2.5">
                   <Input className="h-7 w-28 border-[#d6e0ea] text-sm" />
                 </td>
